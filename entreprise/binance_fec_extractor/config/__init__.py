@@ -1,0 +1,1 @@
+"""Configuration management module for Binance FEC Extractor."""

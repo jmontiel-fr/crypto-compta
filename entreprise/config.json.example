@@ -1,0 +1,25 @@
+{
+  "api": {
+    "base_url": "https://api.binance.com",
+    "timeout": 30,
+    "max_retries": 3,
+    "rate_limit_delay": 0.1
+  },
+  "database": {
+    "url": "sqlite:///binance_fec.db",
+    "echo": false
+  },
+  "output": {
+    "directory": "./output",
+    "filename_template": "binance_fec_{start_date}_{end_date}.txt"
+  },
+  "exchange_rates": {
+    "primary_source": "ecb",
+    "fallback_sources": ["coingecko", "coinbase"],
+    "cache_duration": 3600
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  }
+}

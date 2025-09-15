@@ -1,0 +1,31 @@
+JournalCode	JournalLib	EcritureNum	EcritureDate	CompteNum	CompteLib	CompAuxNum	CompAuxLib	PieceRef	PieceDate	EcritureLib	Debit	Credit	EcritureLet	DateLet	ValidDate	Montantdevise	Idevise	NomPlateformeBlockchain	CUMP	TauxDeChange	DeviseEcartConvertion	AdresseSource	AdresseDestination	IdTransactionComptacrypto
+KUC	KUCOIN	1	20230312	5220021005	Jetons detenus en Usd Coin (USDC) du compte Voxoma			EXEMPLE	20240312	Virement interne	45,75					50	USDC	kucoin	0.915049	0.915049302				
+KUC	KUCOIN	1	20230312	580	Mouvement intra-bancaire			EXEMPLE	20240312	Virement interne		45,75				50	USDC	kucoin	0.915049	0.915049302				
+BIN	BINANCE	2	20230318	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			EXEMPLE	20240318	Virement interne	20007,25					21754,56875	USDC	binance	0.91967	0.91968024				
+BIN	BINANCE	2	20230318	580	Mouvement intra-bancaire			EXEMPLE	20240318	Virement interne		20007,25				21754,56875	USDC	binance	0.91967	0.91968024				
+BIN	BINANCE	3	20230318	6278	Commissions			EXEMPLE	20240318	Frais de transactions	6,44					7	USDC	binance	0.91967	0.91968024				
+BIN	BINANCE	3	20230318	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			EXEMPLE	20240318	Frais de transactions		6,44				7	USDC	binance	0.91967	0.91968024				
+BIN	BINANCE	4	20230318	580	Mouvement intra-bancaire			EXEMPLE	20240318	Virement interne	9208,76					10013	USDC	binance	0.91967	0.91968024				
+BIN	BINANCE	4	20230318	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			EXEMPLE	20240318	Virement interne		9208,76				10013	USDC	binance	0.91967	0.91968024				
+KUC	KUCOIN	5	20230318	5220021005	Jetons detenus en Usd Coin (USDC) du compte Voxoma			EXEMPLE	20240318	Virement interne	9208,76					10013	USDC	kucoin	0.919674	0.91968024				
+KUC	KUCOIN	5	20230318	580	Mouvement intra-bancaire			EXEMPLE	20240318	Virement interne		9208,76				10013	USDC	kucoin	0.919674	0.91968024				
+BIN	BINANCE	6	20230318	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			EXEMPLE	20240318	Trade	10791,53					11738,6936	USDT	binance	0.919313	0.91968024				
+BIN	BINANCE	6	20230318	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			EXEMPLE	20240318	Trade		10791,53				11734	USDC	binance	0.919313	0.91968024				
+BIN	BINANCE	7	20230318	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			EXEMPLE	20240318	Ecart de conversion	0,07					0,067440711	EUR	binance	0.919674	1	USDC			
+BIN	BINANCE	7	20230318	767004	Produits nets sur cessions de jeton			EXEMPLE	20240318	Ecart de conversion		0,07				0,067440711	EUR	binance	0.919674	1	USDC			
+KUC	KUCOIN	8	20230319	5220020188	Jetons detenus en Bitcoin (BTC) du compte Voxoma			EXEMPLE	20240319	Trade	4605,03					0,0794	BTC	kucoin	57997.874932	0.9203618953				
+KUC	KUCOIN	8	20230319	5220021005	Jetons detenus en Usd Coin (USDC) du compte Voxoma			EXEMPLE	20240319	Trade		4605,03				5003,500572	USDC	kucoin	57997.874932	0.9203618953				
+KUC	KUCOIN	9	20230319	5220021005	Jetons detenus en Usd Coin (USDC) du compte Voxoma			EXEMPLE	20240319	Ecart de conversion	3,44					3,439388413	EUR	kucoin	0.919674	1	USDC			
+KUC	KUCOIN	9	20230319	767004	Produits nets sur cessions de jeton			EXEMPLE	20240319	Ecart de conversion		3,44				3,439388413	EUR	kucoin	0.919674	1	USDC			
+BIN	BINANCE	10	20230320	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			EXEMPLE	20240320	Trade	4573,06					6239,9	SEI	binance	0.732874	0.9146058527				
+BIN	BINANCE	10	20230320	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			EXEMPLE	20240320	Trade		4573,06				5000,03187	USDT	binance	0.732874	0.9146058527				
+BIN	BINANCE	11	20230320	667004	Charges nettes sur cessions de jetons			EXEMPLE	20240320	Ecart de conversion	23,53					23,53346147	EUR	binance	0.919313	1	USDT			
+BIN	BINANCE	11	20230320	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			EXEMPLE	20240320	Ecart de conversion		23,53				23,53346147	EUR	binance	0.919313	1	USDT			
+BIN	BINANCE	12	20230320	6278	Commissions			EXEMPLE	20240320	Frais de transactions	4,95					6,2399	SEI	binance	0.732874	0.7936029859				
+BIN	BINANCE	12	20230320	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			EXEMPLE	20240320	Frais de transactions		4,95				6,2399	SEI	binance	0.732874	0.7936029859				
+BIN	BINANCE	13	20230320	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			EXEMPLE	20240320	Ecart de conversion	0,38					0,37894486	EUR	binance	0.732874	1	SEI			
+BIN	BINANCE	13	20230320	767004	Produits nets sur cessions de jeton			EXEMPLE	20240320	Ecart de conversion		0,38				0,37894486	EUR	binance	0.732874	1	SEI			
+KUC	KUCOIN	14	20230320	5220020188	Jetons detenus en Bitcoin (BTC) du compte Voxoma			EXEMPLE	20240320	Trade	2291,83					0,0407	BTC	kucoin	57425.951522	0.9145292522				
+KUC	KUCOIN	14	20230320	5220021005	Jetons detenus en Usd Coin (USDC) du compte Voxoma			EXEMPLE	20240320	Trade		2291,83				2506,016623	USDC	kucoin	57425.951522	0.9145292522				
+KUC	KUCOIN	15	20230320	667004	Charges nettes sur cessions de jetons			EXEMPLE	20240320	Ecart de conversion	12,89					12,89407369	EUR	kucoin	0.919674	1	USDC			
+KUC	KUCOIN	15	20230320	5220021005	Jetons detenus en Usd Coin (USDC) du compte Voxoma			EXEMPLE	20240320	Ecart de conversion		12,89				12,89407369	EUR	kucoin	0.919674	1	USDC			
