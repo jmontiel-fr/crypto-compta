@@ -1,0 +1,41 @@
+JournalCode	JournalLib	EcritureNum	EcritureDate	CompteNum	CompteLib	CompAuxNum	CompAuxLib	PieceRef	PieceDate	EcritureLib	Debit	Credit	EcritureLet	DateLet	ValidDate	Montantdevise	Idevise	NomPlateformeBlockchain	CUMP	TauxDeChange	DeviseEcartConvertion	AdresseSource	AdresseDestination	IdTransactionComptacrypto
+BIN	BINANCE	1	20240115	512000	Banque compte courant			DEP001	20240115	Dépôt EUR sur Binance	1000.00					1000.00	EUR	binance	1.0000	1.0000				TXN-DEP-001
+BIN	BINANCE	1	20240115	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			DEP001	20240115	Dépôt EUR sur Binance		1000.00				1000.00	EUR	binance	1.0000	1.0000				TXN-DEP-001
+BIN	BINANCE	2	20240116	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			BUY001	20240116	Achat BTC avec USDC	21739.13					25000.00	USD	binance	43478.26	0.8696				TXN-BUY-001
+BIN	BINANCE	2	20240116	5220020188	Jetons detenus en Bitcoin (BTC) du compte VOXOMA			BUY001	20240116	Achat BTC avec USDC		21739.13				25000.00	USD	binance	43478.26	0.8696				TXN-BUY-001
+BIN	BINANCE	3	20240116	6278	Commissions			BUY001	20240116	Frais d'achat BTC	8.70					10.00	USD	binance	43478.26	0.8696				TXN-BUY-001-FEE
+BIN	BINANCE	3	20240116	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			BUY001	20240116	Frais d'achat BTC		8.70				10.00	USD	binance	43478.26	0.8696				TXN-BUY-001-FEE
+BIN	BINANCE	4	20240117	5220020188	Jetons detenus en Bitcoin (BTC) du compte VOXOMA			SELL001	20240117	Vente BTC pour USDT	22826.09					26000.00	USD	binance	45217.39	0.8780				TXN-SELL-001
+BIN	BINANCE	4	20240117	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			SELL001	20240117	Vente BTC pour USDT		22826.09				26000.00	USD	binance	45217.39	0.8780				TXN-SELL-001
+BIN	BINANCE	5	20240117	767004	Produits nets sur cessions de jeton			SELL001	20240117	Plus-value sur vente BTC		956.52				1000.00	USD	binance	45217.39	0.8780				TXN-SELL-001-GAIN
+BIN	BINANCE	5	20240117	5220020188	Jetons detenus en Bitcoin (BTC) du compte VOXOMA			SELL001	20240117	Plus-value sur vente BTC	956.52					1000.00	USD	binance	45217.39	0.8780				TXN-SELL-001-GAIN
+BIN	BINANCE	6	20240117	6278	Commissions			SELL001	20240117	Frais de vente BTC	8.78					10.00	USD	binance	45217.39	0.8780				TXN-SELL-001-FEE
+BIN	BINANCE	6	20240117	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			SELL001	20240117	Frais de vente BTC		8.78				10.00	USD	binance	45217.39	0.8780				TXN-SELL-001-FEE
+BIN	BINANCE	7	20240118	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			CONV001	20240118	Conversion USDT vers ETH	17391.30					20000.00	USD	binance	2608.70	0.8696				TXN-CONV-001
+BIN	BINANCE	7	20240118	5220020189	Jetons detenus en Ethereum (ETH) du compte VOXOMA			CONV001	20240118	Conversion USDT vers ETH		17391.30				20000.00	USD	binance	2608.70	0.8696				TXN-CONV-001
+BIN	BINANCE	8	20240118	6278	Commissions			CONV001	20240118	Frais de conversion	8.70					10.00	USD	binance	2608.70	0.8696				TXN-CONV-001-FEE
+BIN	BINANCE	8	20240118	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			CONV001	20240118	Frais de conversion		8.70				10.00	USD	binance	2608.70	0.8696				TXN-CONV-001-FEE
+BIN	BINANCE	9	20240119	5220020189	Jetons detenus en Ethereum (ETH) du compte VOXOMA			SWAP001	20240119	Échange ETH vers BNB	8695.65					10000.00	USD	binance	2608.70	0.8696				TXN-SWAP-001-OUT
+BIN	BINANCE	9	20240119	5220020190	Jetons detenus en Binance Coin (BNB) du compte VOXOMA			SWAP001	20240119	Échange ETH vers BNB		8695.65				10000.00	USD	binance	347.83	0.8696				TXN-SWAP-001-IN
+BIN	BINANCE	10	20240119	6278	Commissions			SWAP001	20240119	Frais d'échange ETH/BNB	4.35					5.00	USD	binance	347.83	0.8696				TXN-SWAP-001-FEE
+BIN	BINANCE	10	20240119	5220020189	Jetons detenus en Ethereum (ETH) du compte VOXOMA			SWAP001	20240119	Frais d'échange ETH/BNB		4.35				5.00	USD	binance	2608.70	0.8696				TXN-SWAP-001-FEE
+BIN	BINANCE	11	20240120	580	Mouvement intra-bancaire			TRANS001	20240120	Transfert interne vers Spot	4347.83					5000.00	USD	binance	347.83	0.8696				TXN-TRANS-001
+BIN	BINANCE	11	20240120	5220020190	Jetons detenus en Binance Coin (BNB) du compte VOXOMA			TRANS001	20240120	Transfert interne vers Spot		4347.83				5000.00	USD	binance	347.83	0.8696				TXN-TRANS-001
+BIN	BINANCE	12	20240121	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			BUY002	20240121	Achat SEI avec USDT	8695.65					10000.00	USD	binance	0.8696	0.8696				TXN-BUY-002
+BIN	BINANCE	12	20240121	5220011011	Jetons detenus en Tether (USDT) du compte VOXOMA			BUY002	20240121	Achat SEI avec USDT		8695.65				10000.00	USD	binance	0.8696	0.8696				TXN-BUY-002
+BIN	BINANCE	13	20240121	6278	Commissions			BUY002	20240121	Frais d'achat SEI	4.35					5.00	USD	binance	0.8696	0.8696				TXN-BUY-002-FEE
+BIN	BINANCE	13	20240121	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			BUY002	20240121	Frais d'achat SEI		4.35				5.00	USD	binance	0.8696	0.8696				TXN-BUY-002-FEE
+BIN	BINANCE	14	20240122	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			SELL002	20240122	Vente SEI pour USDC	7826.09					9000.00	USD	binance	0.7826	0.8696				TXN-SELL-002
+BIN	BINANCE	14	20240122	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			SELL002	20240122	Vente SEI pour USDC		7826.09				9000.00	USD	binance	0.7826	0.8696				TXN-SELL-002
+BIN	BINANCE	15	20240122	667004	Charges nettes sur cessions de jetons			SELL002	20240122	Moins-value sur vente SEI	869.56					1000.00	USD	binance	0.7826	0.8696				TXN-SELL-002-LOSS
+BIN	BINANCE	15	20240122	5220012289	Jetons detenus en Sei (SEI) du compte VOXOMA			SELL002	20240122	Moins-value sur vente SEI		869.56				1000.00	USD	binance	0.7826	0.8696				TXN-SELL-002-LOSS
+BIN	BINANCE	16	20240122	6278	Commissions			SELL002	20240122	Frais de vente SEI	4.35					5.00	USD	binance	0.7826	0.8696				TXN-SELL-002-FEE
+BIN	BINANCE	16	20240122	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			SELL002	20240122	Frais de vente SEI		4.35				5.00	USD	binance	0.7826	0.8696				TXN-SELL-002-FEE
+BIN	BINANCE	17	20240123	512000	Banque compte courant			WITH001	20240123	Retrait EUR de Binance		800.00				800.00	EUR	binance	1.0000	1.0000				TXN-WITH-001
+BIN	BINANCE	17	20240123	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			WITH001	20240123	Retrait EUR de Binance	800.00					800.00	EUR	binance	1.0000	1.0000				TXN-WITH-001
+BIN	BINANCE	18	20240123	6278	Commissions			WITH001	20240123	Frais de retrait EUR	4.35					5.00	USD	binance	1.0000	0.8696				TXN-WITH-001-FEE
+BIN	BINANCE	18	20240123	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			WITH001	20240123	Frais de retrait EUR		4.35				5.00	USD	binance	1.0000	0.8696				TXN-WITH-001-FEE
+BIN	BINANCE	19	20240124	5220011005	Jetons detenus en Usd Coin (USDC) du compte VOXOMA			CONV002	20240124	Écart de conversion USD/EUR	2.17					2.50	EUR	binance	1.0000	1.0000	USD			TXN-CONV-002
+BIN	BINANCE	19	20240124	767004	Produits nets sur cessions de jeton			CONV002	20240124	Écart de conversion USD/EUR		2.17				2.50	EUR	binance	1.0000	1.0000	USD			TXN-CONV-002
+BIN	BINANCE	20	20240125	5220020190	Jetons detenus en Binance Coin (BNB) du compte VOXOMA			STAKE001	20240125	Récompense de staking BNB		43.48				50.00	USD	binance	347.83	0.8696				TXN-STAKE-001
+BIN	BINANCE	20	20240125	758000	Produits de participations			STAKE001	20240125	Récompense de staking BNB	43.48					50.00	USD	binance	347.83	0.8696				TXN-STAKE-001
