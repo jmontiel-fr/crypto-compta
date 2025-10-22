@@ -1,0 +1,487 @@
+2025-10-22 08:16:08 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:16:08 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:16:08 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:16:08 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:16:08 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:16:08 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:16:08 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:16:08 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:16:09 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:16:09 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:16:09 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:16:09 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:16:09 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:16:09 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:16:09 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:16:09 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:16:09 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:16:09 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:16:17 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:16:20 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:16:24 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:16:29 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:16:33 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:16:36 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:16:40 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:16:43 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:16:47 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:16:51 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:16:51 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:16:51 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:16:51 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:28:47 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:28:47 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:28:47 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:28:47 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:28:47 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:28:47 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:28:47 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:28:47 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:28:48 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:28:48 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:28:48 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:28:48 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:28:48 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:28:48 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:28:48 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:28:48 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:28:48 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:28:48 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:28:52 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:28:56 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:28:59 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:29:03 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:29:07 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:29:10 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:29:15 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:29:18 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:29:22 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:29:26 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:29:26 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:29:26 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:29:26 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:32:10 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:32:10 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:32:10 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:32:10 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:32:10 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:32:10 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:32:10 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:32:10 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:32:10 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:32:10 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:32:10 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:32:10 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:32:11 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:32:11 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:32:11 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:32:11 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:32:11 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:32:11 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:32:15 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:32:18 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:32:22 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:32:26 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:32:31 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:32:36 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:32:39 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:32:43 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:32:47 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:32:51 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:32:51 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:32:51 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:32:51 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:37:19 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:37:19 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:37:19 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:37:19 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:37:19 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:37:19 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:37:19 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:37:19 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:37:20 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:37:20 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:37:20 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:37:20 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:37:20 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:37:20 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:37:20 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:37:20 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:37:20 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:37:20 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:37:21 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:37:21 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:37:21 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:37:25 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:37:25 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:37:25 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:37:26 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:37:26 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:37:26 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:37:26 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:37:26 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:37:26 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:37:26 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:41:46 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:41:46 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:41:46 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:41:46 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:41:46 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:41:46 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:41:46 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:41:46 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:41:46 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:41:46 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:41:46 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:41:46 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:41:47 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:41:47 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:41:47 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:41:47 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:41:47 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:41:50 - binance_tax_report - INFO - Current portfolio value: $1035.3633017160000000 USD
+2025-10-22 08:41:53 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:41:53 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:41:53 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:41:53 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:41:54 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:41:54 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:41:54 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:41:54 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:41:55 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:41:55 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:41:55 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:41:55 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:41:55 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:41:55 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:43:08 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:43:08 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:43:08 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:43:08 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:43:08 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:43:08 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:43:08 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:43:08 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:43:09 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:43:09 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:43:09 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:43:09 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:43:09 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:43:10 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:43:10 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:43:10 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:43:10 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:43:13 - binance_tax_report - INFO - Current portfolio value: $1035.6127024690000000 USD
+2025-10-22 08:43:13 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:43:15 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:43:18 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:43:20 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:43:21 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:43:23 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:43:24 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:43:25 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:43:26 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:43:26 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:43:26 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:43:26 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:43:26 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:43:26 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:45:32 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:45:32 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:45:32 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:45:32 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:45:32 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:45:32 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:45:32 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:45:32 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:45:33 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:45:33 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:45:33 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:45:33 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:45:33 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:45:33 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:45:33 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:45:33 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:45:33 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:45:33 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:45:34 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:38:42+00:00
+2025-10-22 08:45:40 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:45:40 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:50:56+00:00
+2025-10-22 08:45:49 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:45:50 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 15:41:50+00:00
+2025-10-22 08:45:56 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:45:57 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 16:36:19+00:00
+2025-10-22 08:46:03 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:46:04 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 07:20:22+00:00: $699.6110002474000000 USD
+2025-10-22 08:46:04 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:46:06 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 09:24:22+00:00: $698.8236115100000000 USD
+2025-10-22 08:46:06 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:46:07 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 09:27:26+00:00: $698.8236115100000000 USD
+2025-10-22 08:46:07 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:46:09 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 15:12:36+00:00: $702.9287651968000000 USD
+2025-10-22 08:46:09 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:46:15 - binance_tax_report - INFO - Using snapshot data for 2025-10-18 20:24:31+00:00: $910.0073389928000000 USD
+2025-10-22 08:46:15 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:46:16 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-19 08:38:10+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:46:16 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-19 08:38:10+00:00
+2025-10-22 08:46:22 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:46:22 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:46:22 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:46:22 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:47:59 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:47:59 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:47:59 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:47:59 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:47:59 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:47:59 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:47:59 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:47:59 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:48:00 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:48:00 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:48:00 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:48:00 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:48:00 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:48:00 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:48:00 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:48:00 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:48:00 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:48:00 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:48:01 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:38:42+00:00
+2025-10-22 08:48:07 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:48:07 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:50:56+00:00
+2025-10-22 08:48:14 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:48:14 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 15:41:50+00:00
+2025-10-22 08:48:21 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:48:22 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 16:36:19+00:00
+2025-10-22 08:48:28 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:48:29 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 07:20:22+00:00: $699.6110002474000000 USD
+2025-10-22 08:48:29 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:48:30 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-14 09:24:22+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:48:30 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-14 09:24:22+00:00
+2025-10-22 08:48:36 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:48:37 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-14 09:27:26+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:48:37 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-14 09:27:26+00:00
+2025-10-22 08:48:43 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:48:44 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-14 15:12:36+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:48:44 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-14 15:12:36+00:00
+2025-10-22 08:48:50 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:48:51 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-18 20:24:31+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:48:51 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-18 20:24:31+00:00
+2025-10-22 08:48:57 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:48:57 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-19 08:38:10+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:48:57 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-19 08:38:10+00:00
+2025-10-22 08:49:03 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:49:03 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:49:03 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:49:03 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:54:51 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:54:51 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:54:51 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:54:51 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:54:51 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:54:51 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:54:51 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:54:51 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:54:51 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:54:51 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:54:51 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:54:51 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:54:52 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:54:52 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:54:52 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:54:52 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:54:52 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:54:52 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:54:52 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:54:52 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:54:53 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:54:53 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:54:53 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:54:53 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:54:54 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:54:54 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:54:54 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:54:55 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:54:55 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:54:55 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:54:55 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:55:42 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:55:42 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:55:42 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:55:42 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:55:42 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:55:42 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:55:42 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:55:42 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:55:43 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:55:43 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:55:43 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:55:43 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:55:43 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:55:44 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:55:44 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:55:44 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:55:44 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:55:44 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:55:44 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:38:42+00:00
+2025-10-22 08:55:50 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:55:51 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:50:56+00:00
+2025-10-22 08:55:57 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:55:57 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 15:41:50+00:00
+2025-10-22 08:56:03 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:56:04 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 16:36:19+00:00
+2025-10-22 08:56:10 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:56:12 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 07:20:22+00:00: $699.6110002474000000 USD
+2025-10-22 08:56:12 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:56:13 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 09:24:22+00:00: $698.8236115100000000 USD
+2025-10-22 08:56:13 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:56:15 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 09:27:26+00:00: $698.8236115100000000 USD
+2025-10-22 08:56:15 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 08:56:16 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 15:12:36+00:00: $702.9287651968000000 USD
+2025-10-22 08:56:16 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 08:56:17 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-18 20:24:31+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:56:17 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-18 20:24:31+00:00
+2025-10-22 08:56:23 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 08:56:23 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-19 08:38:10+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:56:23 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-19 08:38:10+00:00
+2025-10-22 08:56:30 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 08:56:30 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:56:30 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 08:56:30 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 08:58:59 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:58:59 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:58:59 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:58:59 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:58:59 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:58:59 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:58:59 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:58:59 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:59:00 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:59:00 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:00 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:59:00 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:59:00 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:59:01 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:59:01 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:59:01 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:59:01 - binance_tax_report - ERROR - Unexpected error: name 'os' is not defined
+Traceback (most recent call last):
+  File "C:\Users\jacky\Documents\GitHub\crypto-compta\personnel\generate_tax_report.py", line 101, in generate_tax_report
+    if os.path.exists(manual_values_file):
+       ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+2025-10-22 08:59:01 - binance_tax_report - ERROR - Fatal unexpected error: name 'os' is not defined
+Traceback (most recent call last):
+  File "C:\Users\jacky\Documents\GitHub\crypto-compta\personnel\generate_tax_report.py", line 323, in main
+    generate_tax_report(args.year, args.pdf)
+  File "C:\Users\jacky\Documents\GitHub\crypto-compta\personnel\generate_tax_report.py", line 101, in generate_tax_report
+    if os.path.exists(manual_values_file):
+       ^^
+NameError: name 'os' is not defined. Did you forget to import 'os'
+2025-10-22 08:59:19 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 08:59:19 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 08:59:19 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 08:59:19 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 08:59:19 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 08:59:19 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 08:59:19 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 08:59:19 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 08:59:20 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 08:59:20 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:20 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 08:59:20 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 08:59:20 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 08:59:20 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 08:59:20 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 08:59:20 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 08:59:20 - binance_tax_report - INFO - Loading manual portfolio values from portfolio_values_manual.csv
+2025-10-22 08:59:20 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 08:59:20 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 08:59:21 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:38:42+00:00
+2025-10-22 08:59:22 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:27 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 08:59:27 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:50:56+00:00
+2025-10-22 08:59:29 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:33 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 08:59:34 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 15:41:50+00:00
+2025-10-22 08:59:35 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:39 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 08:59:40 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 16:36:19+00:00
+2025-10-22 08:59:41 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:46 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 08:59:47 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:47 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 07:20:22+00:00: $700.2572295784000000 USD
+2025-10-22 08:59:47 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 08:59:48 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-14 09:24:22+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:59:48 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-14 09:24:22+00:00
+2025-10-22 08:59:49 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 08:59:54 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 08:59:54 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-14 09:27:26+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 08:59:54 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-14 09:27:26+00:00
+2025-10-22 08:59:55 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:00:02 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 09:00:03 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:00:04 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 15:12:36+00:00: $700.5788403568000000 USD
+2025-10-22 09:00:04 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 09:00:06 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:00:13 - binance_tax_report - INFO - Using snapshot data for 2025-10-18 20:24:31+00:00: $910.4939940968000000 USD
+2025-10-22 09:00:13 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 09:00:16 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:00:21 - binance_tax_report - INFO - Using snapshot data for 2025-10-19 08:38:10+00:00: $1043.1821324054000000 USD
+2025-10-22 09:00:21 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 09:00:21 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 09:00:21 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 09:00:21 - binance_tax_report - INFO - Tax report generation complete
+2025-10-22 09:06:30 - binance_tax_report - INFO - Logger initialized. Log file: logs\tax_report_2025.log
+2025-10-22 09:06:30 - binance_tax_report - INFO - Starting tax report generation for year 2025
+2025-10-22 09:06:30 - binance_tax_report - INFO - PDF generation: disabled
+2025-10-22 09:06:30 - binance_tax_report - INFO - Loading Binance API credentials
+2025-10-22 09:06:30 - binance_tax_report - INFO - Loading Binance API keys from 'binance_keys'
+2025-10-22 09:06:30 - binance_tax_report - INFO - Binance API keys loaded successfully
+2025-10-22 09:06:30 - binance_tax_report - INFO - Initializing Binance and Frankfurter API clients
+2025-10-22 09:06:30 - binance_tax_report - INFO - Initializing Binance API client
+2025-10-22 09:06:30 - binance_tax_report - INFO - Binance API client initialized successfully
+2025-10-22 09:06:30 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:06:30 - binance_tax_report - INFO - Fetching fiat operations for year 2025
+2025-10-22 09:06:30 - binance_tax_report - INFO - Retrieving EUR fiat operations for year 2025
+2025-10-22 09:06:31 - binance_tax_report - INFO - Found 9 deposit(s)
+2025-10-22 09:06:31 - binance_tax_report - INFO - Found 1 withdrawal(s)
+2025-10-22 09:06:31 - binance_tax_report - INFO - Total operations retrieved: 10
+2025-10-22 09:06:31 - binance_tax_report - INFO - Flat tax calculator initialized
+2025-10-22 09:06:31 - binance_tax_report - INFO - Loading manual portfolio values from portfolio_values_manual.csv
+2025-10-22 09:06:31 - binance_tax_report - INFO - Processing operations and calculating taxes
+2025-10-22 09:06:31 - binance_tax_report - INFO - Processing operation 1/10: Dépôt - €19.60
+2025-10-22 09:06:32 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:38:42+00:00
+2025-10-22 09:06:33 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:06:38 - binance_tax_report - INFO - Processing operation 2/10: Dépôt - €49.00
+2025-10-22 09:06:38 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 14:50:56+00:00
+2025-10-22 09:06:39 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:06:44 - binance_tax_report - INFO - Processing operation 3/10: Dépôt - €9.00
+2025-10-22 09:06:44 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 15:41:50+00:00
+2025-10-22 09:06:46 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:06:51 - binance_tax_report - INFO - Processing operation 4/10: Retrait - €14.00
+2025-10-22 09:06:52 - binance_tax_report - INFO - Using current balances with historical prices for 2025-08-29 16:36:19+00:00
+2025-10-22 09:06:54 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:06:58 - binance_tax_report - INFO - Processing operation 5/10: Dépôt - €19.00
+2025-10-22 09:07:00 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:07:00 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 07:20:22+00:00: $700.2572295784000000 USD
+2025-10-22 09:07:00 - binance_tax_report - INFO - Processing operation 6/10: Dépôt - €9.00
+2025-10-22 09:07:01 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:07:01 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 09:24:22+00:00: $699.9985739300000000 USD
+2025-10-22 09:07:01 - binance_tax_report - INFO - Processing operation 7/10: Dépôt - €17.00
+2025-10-22 09:07:02 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:07:02 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 09:27:26+00:00: $699.9985739300000000 USD
+2025-10-22 09:07:02 - binance_tax_report - INFO - Processing operation 8/10: Dépôt - €499.00
+2025-10-22 09:07:03 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:07:04 - binance_tax_report - INFO - Using snapshot data for 2025-10-14 15:12:36+00:00: $700.5788403568000000 USD
+2025-10-22 09:07:04 - binance_tax_report - INFO - Processing operation 9/10: Dépôt - €199.00
+2025-10-22 09:07:06 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:07:10 - binance_tax_report - INFO - Using snapshot data for 2025-10-18 20:24:31+00:00: $910.4939940968000000 USD
+2025-10-22 09:07:10 - binance_tax_report - INFO - Processing operation 10/10: Dépôt - €119.00
+2025-10-22 09:07:11 - binance_tax_report - WARNING - Could not get snapshot for 2025-10-19 08:38:10+00:00: APIError(code=-1003): Too many requests; current request has limited.
+2025-10-22 09:07:11 - binance_tax_report - INFO - Using current balances with historical prices for 2025-10-19 08:38:10+00:00
+2025-10-22 09:07:12 - binance_tax_report - INFO - Frankfurter API client initialized
+2025-10-22 09:07:17 - binance_tax_report - INFO - Generating Excel report
+2025-10-22 09:07:17 - binance_tax_report - INFO - Creating Excel report: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 09:07:18 - binance_tax_report - INFO - Excel report saved successfully: rapports/Declaration_Fiscale_Crypto_2025.xlsx
+2025-10-22 09:07:18 - binance_tax_report - INFO - Tax report generation complete

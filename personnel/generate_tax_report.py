@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Binance Tax Report Generator
 
@@ -7,6 +7,7 @@ Calculates flat tax on capital gains from fiat EUR withdrawals.
 """
 
 import argparse
+import os
 import sys
 from datetime import datetime
 from decimal import Decimal
@@ -95,24 +96,78 @@ def generate_tax_report(year: int, generate_pdf: bool = False) -> None:
         portfolio_calculator = PortfolioValueCalculator()
         print("✓ Calculator initialized\n")
         
-        # Step 5: Process operations and calculate taxes
+        # Step 5: Load manual portfolio values if provided
+        manual_values = {}
+        manual_values_file = "portfolio_values_manual.csv"
+        if os.path.exists(manual_values_file):
+            logger.info(f"Loading manual portfolio values from {manual_values_file}")
+            try:
+                with open(manual_values_file, 'r') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#'):
+                            parts = line.split(',')
+                            if len(parts) == 2:
+                                timestamp = int(parts[0])
+                                value = Decimal(parts[1])
+                                manual_values[timestamp] = value
+                                logger.info(f"Manual value loaded: timestamp {timestamp} = ${value} USD")
+                if manual_values:
+                    print(f"   ✓ Loaded {len(manual_values)} manual portfolio value(s)")
+            except Exception as e:
+                logger.warning(f"Could not load manual values: {e}")
+        
+        # Step 6: Process operations and calculate taxes
         print("💰 Processing operations and calculating taxes...")
         logger.info("Processing operations and calculating taxes")
         
         report_rows = []
         
+        # Try to get real portfolio values from Binance snapshots
+        # Snapshots are only available for the last 30 days
+        print("   Retrieving portfolio snapshots from Binance...")
+        
         for idx, operation in enumerate(operations, 1):
             logger.info(f"Processing operation {idx}/{len(operations)}: {operation.operation_type} - €{operation.amount_eur}")
             print(f"   [{idx}/{len(operations)}] {operation.date.strftime('%Y-%m-%d')} - {operation.operation_type} - €{operation.amount_eur}")
-            
-            # Get portfolio value in USD after the operation
-            portfolio_value_usd = binance_client.get_portfolio_value_usd(operation.timestamp)
-            logger.debug(f"Portfolio value: ${portfolio_value_usd} USD")
             
             # Get exchange rate for the operation date
             operation_date = operation.date.date()
             exchange_rate = frankfurter_client.get_exchange_rate(operation_date, "USD", "EUR")
             logger.debug(f"Exchange rate: {exchange_rate} USD/EUR")
+            
+            # Try to get real portfolio value from Binance
+            # Check if manual value is provided first
+            if operation.timestamp in manual_values:
+                portfolio_value_usd = manual_values[operation.timestamp]
+                logger.info(f"Using manual portfolio value: ${portfolio_value_usd} USD")
+                print(f"      ✓ Using manual value: ${portfolio_value_usd:.2f} USD")
+            else:
+                try:
+                    portfolio_value_usd_raw = binance_client.get_portfolio_value_usd(operation.timestamp)
+                    
+                    # Adjust based on operation type
+                    if operation.operation_type == "Dépôt":
+                        # For deposits: Binance gives us current crypto value
+                        # We assume all deposited EUR will be converted to crypto
+                        # So: portfolio value = current crypto + deposit amount
+                        deposit_usd = operation.amount_eur / exchange_rate
+                        portfolio_value_usd = portfolio_value_usd_raw + deposit_usd
+                        logger.debug(f"Portfolio value AFTER deposit: ${portfolio_value_usd:.2f} USD (crypto: ${portfolio_value_usd_raw:.2f} + deposit: ${deposit_usd:.2f})")
+                    else:  # Retrait
+                        # For withdrawals: Binance gives us crypto value AFTER the withdrawal
+                        # (because we already sold crypto to get EUR fiat)
+                        # We need value BEFORE withdrawal for tax calculation
+                        # So: portfolio value BEFORE = current crypto + withdrawal amount
+                        withdrawal_usd = operation.amount_eur / exchange_rate
+                        portfolio_value_usd = portfolio_value_usd_raw + withdrawal_usd
+                        logger.debug(f"Portfolio value BEFORE withdrawal: ${portfolio_value_usd:.2f} USD (crypto after: ${portfolio_value_usd_raw:.2f} + withdrawal: ${withdrawal_usd:.2f})")
+                        
+                except Exception as e:
+                    logger.error(f"Could not retrieve portfolio value for {operation.date}: {e}")
+                    print(f"      ⚠️  Warning: Could not retrieve portfolio value from Binance")
+                    # Use a placeholder value
+                    portfolio_value_usd = Decimal("0")
             
             # Calculate portfolio value in EUR (only for withdrawals)
             portfolio_value_eur = None

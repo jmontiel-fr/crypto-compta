@@ -374,9 +374,72 @@ class BinanceClient:
         """
         for attempt in range(max_retries):
             try:
-                # Get account snapshot at the given timestamp
-                # Note: Binance API may not support historical snapshots for all account types
-                # We'll use current account balance as a fallback
+                # Try to get account snapshot for the specific date
+                # Note: Binance only keeps snapshots for the last 30 days
+                from datetime import datetime
+                snapshot_date = datetime.fromtimestamp(timestamp / 1000, tz=timezone.utc)
+                
+                try:
+                    # Try to get daily account snapshot (SPOT account)
+                    snapshot = self.client.get_account_snapshot(
+                        type='SPOT',
+                        startTime=timestamp,
+                        endTime=timestamp + 86400000,  # +24 hours
+                        limit=1
+                    )
+                    
+                    if snapshot.get('code') == 200 and snapshot.get('snapshotVos'):
+                        # Use snapshot data
+                        snapshot_data = snapshot['snapshotVos'][0]['data']
+                        total_value_usd = Decimal("0")
+                        
+                        for balance in snapshot_data.get('balances', []):
+                            asset = balance['asset']
+                            free = Decimal(balance['free'])
+                            locked = Decimal(balance['locked'])
+                            total = free + locked
+                            
+                            if total > 0:
+                                # Get historical price for this asset at the snapshot time
+                                if asset == 'USDT' or asset == 'USDC' or asset == 'BUSD':
+                                    # Stablecoins are 1:1 with USD
+                                    total_value_usd += total
+                                elif asset == 'EUR':
+                                    # EUR fiat balance - convert to USD using historical rate
+                                    try:
+                                        from clients.frankfurter_client import FrankfurterClient
+                                        fx_client = FrankfurterClient()
+                                        snapshot_date_obj = datetime.fromtimestamp(timestamp / 1000, tz=timezone.utc).date()
+                                        eur_to_usd_rate = fx_client.get_exchange_rate(snapshot_date_obj, "EUR", "USD")
+                                        total_value_usd += total * eur_to_usd_rate
+                                        self.logger.debug(f"EUR fiat: {total} × {eur_to_usd_rate} = ${total * eur_to_usd_rate}")
+                                    except Exception as e:
+                                        self.logger.warning(f"Could not convert EUR to USD: {e}")
+                                else:
+                                    try:
+                                        symbol = f"{asset}USDT"
+                                        # Get kline (candlestick) data for the specific timestamp
+                                        klines = self.client.get_historical_klines(
+                                            symbol, 
+                                            self.client.KLINE_INTERVAL_1HOUR,
+                                            timestamp,
+                                            timestamp + 3600000,  # +1 hour
+                                            limit=1
+                                        )
+                                        if klines:
+                                            # Use close price
+                                            price = Decimal(klines[0][4])
+                                            total_value_usd += total * price
+                                    except:
+                                        pass
+                        
+                        self.logger.info(f"Using snapshot data for {snapshot_date}: ${total_value_usd} USD")
+                        return total_value_usd
+                except Exception as e:
+                    self.logger.warning(f"Could not get snapshot for {snapshot_date}: {e}")
+                
+                # Fallback: Use current account balance with historical prices
+                self.logger.info(f"Using current balances with historical prices for {snapshot_date}")
                 account_info = self.client.get_account()
                 
                 total_value_usd = Decimal("0")
@@ -389,20 +452,41 @@ class BinanceClient:
                     total = free + locked
                     
                     if total > 0:
-                        # Convert to USD
+                        # Convert to USD using historical price
                         if asset == 'USDT' or asset == 'USDC' or asset == 'BUSD':
                             # Stablecoins are 1:1 with USD
                             total_value_usd += total
+                        elif asset == 'EUR':
+                            # EUR fiat balance - convert to USD using historical rate
+                            try:
+                                from clients.frankfurter_client import FrankfurterClient
+                                fx_client = FrankfurterClient()
+                                snapshot_date_obj = datetime.fromtimestamp(timestamp / 1000, tz=timezone.utc).date()
+                                eur_to_usd_rate = fx_client.get_exchange_rate(snapshot_date_obj, "EUR", "USD")
+                                total_value_usd += total * eur_to_usd_rate
+                                self.logger.debug(f"EUR fiat: {total} × {eur_to_usd_rate} = ${total * eur_to_usd_rate}")
+                            except Exception as e:
+                                self.logger.warning(f"Could not convert EUR to USD: {e}")
                         else:
-                            # Get current price in USDT
+                            # Get historical price at the timestamp
                             try:
                                 symbol = f"{asset}USDT"
-                                ticker = self.client.get_symbol_ticker(symbol=symbol)
-                                price = Decimal(ticker['price'])
-                                total_value_usd += total * price
-                            except:
-                                # If pair doesn't exist, try with BTC or ETH as intermediary
-                                # For simplicity, skip assets that can't be priced
+                                # Get kline data for the specific timestamp
+                                klines = self.client.get_historical_klines(
+                                    symbol, 
+                                    self.client.KLINE_INTERVAL_1HOUR,
+                                    timestamp,
+                                    timestamp + 3600000,  # +1 hour
+                                    limit=1
+                                )
+                                if klines:
+                                    # Use close price
+                                    price = Decimal(klines[0][4])
+                                    total_value_usd += total * price
+                                    self.logger.debug(f"{asset}: {total} × ${price} = ${total * price}")
+                            except Exception as e:
+                                self.logger.warning(f"Could not get historical price for {asset}: {e}")
+                                # Skip assets we can't price
                                 pass
                 
                 return total_value_usd

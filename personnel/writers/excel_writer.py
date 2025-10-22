@@ -159,7 +159,7 @@ class ExcelReportWriter:
     
     def _add_data_rows(self, worksheet, operations: List[TaxReportRow]) -> None:
         """
-        Add data rows to the worksheet.
+        Add data rows to the worksheet with formulas for calculated columns.
         
         Args:
             worksheet: openpyxl worksheet object
@@ -178,23 +178,47 @@ class ExcelReportWriter:
             # Portfolio value USD (2 decimal places)
             worksheet.cell(row=row_idx, column=4).value = float(operation.portfolio_value_usd)
             
-            # Exchange rate (2 decimal places)
+            # Exchange rate (4 decimal places for precision)
             worksheet.cell(row=row_idx, column=5).value = float(operation.exchange_rate)
             
-            # Portfolio value EUR (empty for deposits, 2 decimal places for withdrawals)
-            if operation.portfolio_value_eur is not None:
-                worksheet.cell(row=row_idx, column=6).value = float(operation.portfolio_value_eur)
+            # Portfolio value EUR - FORMULA: =D{row}*E{row} (empty for deposits)
+            if operation.operation_type == "Retrait":
+                worksheet.cell(row=row_idx, column=6).value = f"=D{row_idx}*E{row_idx}"
             else:
                 worksheet.cell(row=row_idx, column=6).value = ""
             
-            # Acquisition cost (2 decimal places)
-            worksheet.cell(row=row_idx, column=7).value = float(operation.acquisition_cost)
+            # Acquisition cost - FORMULA based on previous row
+            # For deposits: previous cost + deposit amount
+            # For withdrawals: previous cost - (previous cost * (withdrawal / portfolio value))
+            if row_idx == 2:
+                # First row
+                if operation.operation_type == "Dépôt":
+                    worksheet.cell(row=row_idx, column=7).value = f"=C{row_idx}"
+                else:  # Retrait
+                    worksheet.cell(row=row_idx, column=7).value = f"=0-(0*(C{row_idx}/F{row_idx}))"
+            else:
+                # Subsequent rows
+                if operation.operation_type == "Dépôt":
+                    worksheet.cell(row=row_idx, column=7).value = f"=G{row_idx-1}+C{row_idx}"
+                else:  # Retrait
+                    worksheet.cell(row=row_idx, column=7).value = f"=G{row_idx-1}-(G{row_idx-1}*(C{row_idx}/F{row_idx}))"
             
-            # Taxable gain (2 decimal places)
-            worksheet.cell(row=row_idx, column=8).value = float(operation.taxable_gain)
+            # Taxable gain - FORMULA: withdrawal - (acquisition cost portion)
+            # For deposits: 0
+            # For withdrawals: =C{row}-(previous_G * (C{row}/F{row}))
+            if operation.operation_type == "Dépôt":
+                worksheet.cell(row=row_idx, column=8).value = 0
+            else:  # Retrait
+                if row_idx == 2:
+                    worksheet.cell(row=row_idx, column=8).value = f"=C{row_idx}-(0*(C{row_idx}/F{row_idx}))"
+                else:
+                    worksheet.cell(row=row_idx, column=8).value = f"=C{row_idx}-(G{row_idx-1}*(C{row_idx}/F{row_idx}))"
             
-            # Cumulative gains (2 decimal places)
-            worksheet.cell(row=row_idx, column=9).value = float(operation.cumulative_gains)
+            # Cumulative gains - FORMULA: =I{prev_row}+H{row} (or just H{row} for first row)
+            if row_idx == 2:
+                worksheet.cell(row=row_idx, column=9).value = f"=H{row_idx}"
+            else:
+                worksheet.cell(row=row_idx, column=9).value = f"=I{row_idx-1}+H{row_idx}"
     
     def _add_summary_row(self, worksheet, operations: List[TaxReportRow]) -> None:
         """
@@ -264,15 +288,20 @@ class ExcelReportWriter:
             column_letter = get_column_letter(col_idx)
             worksheet.column_dimensions[column_letter].width = width
         
-        # Format numeric columns with 2 decimal places
-        numeric_columns = [3, 4, 5, 6, 7, 8, 9]
+        # Format numeric columns
+        # Exchange rate with 4 decimals for precision
+        for row in worksheet.iter_rows(min_row=2, max_row=worksheet.max_row):
+            row[4].number_format = '0.0000'  # Column E: Exchange rate
+            row[4].alignment = Alignment(horizontal='right')
+        
+        # Other numeric columns with 2 decimal places
+        numeric_columns_2dp = [3, 4, 6, 7, 8, 9]  # C, D, F, G, H, I
         
         for row in worksheet.iter_rows(min_row=2, max_row=worksheet.max_row):
-            for col_idx in numeric_columns:
+            for col_idx in numeric_columns_2dp:
                 cell = row[col_idx - 1]
-                if cell.value and isinstance(cell.value, (int, float)):
-                    cell.number_format = '0.00'
-                    cell.alignment = Alignment(horizontal='right')
+                cell.number_format = '0.00'
+                cell.alignment = Alignment(horizontal='right')
         
         # Center align date and operation type columns
         for row in worksheet.iter_rows(min_row=2, max_row=worksheet.max_row):

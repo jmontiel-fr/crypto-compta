@@ -1,0 +1,17 @@
+# Valeurs manuelles du portefeuille pour les dates sans snapshot Binance
+# Format: timestamp,portfolio_value_usd
+# Laissez vide pour utiliser l'approximation automatique
+#
+# Exemple:
+# 1724943522000,25.50
+#
+# Pour trouver le timestamp d'une date:
+# Python: int(datetime(2025, 8, 29, 14, 38, 42).timestamp() * 1000)
+#
+# Opérations nécessitant des valeurs manuelles (août 2025):
+# 2025-08-29 14:38:42 - Dépôt 19.60 EUR - timestamp: 1724943522000
+# 2025-08-29 14:50:56 - Dépôt 49.00 EUR - timestamp: 1724944256000
+# 2025-08-29 15:41:50 - Dépôt 9.00 EUR - timestamp: 1724947310000
+# 2025-08-29 16:36:19 - Retrait 14.00 EUR - timestamp: 1724950579000
+#
+# Ajoutez vos valeurs ci-dessous (une par ligne):

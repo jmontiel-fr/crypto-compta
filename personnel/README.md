@@ -1,277 +1,277 @@
-# Binance Tax Report Generator
+# Générateur de Déclaration Fiscale Crypto - Binance
 
-A Python application that automatically generates French tax reports for cryptocurrency assets held on Binance. The system calculates taxable capital gains (flat tax) on EUR withdrawals according to French tax regulations.
+Programme de génération automatique de déclarations fiscales pour les opérations de cryptomonnaies sur Binance, conforme à la législation française.
 
-## Features
+## 📋 Description
 
-- 🔄 Automatic retrieval of EUR deposit/withdrawal operations from Binance
-- 💰 Accurate capital gains calculation using the French flat tax method
-- 📊 Excel report generation with detailed transaction history
-- 📄 Optional PDF report generation
-- 🔒 Secure API key management
-- 📝 Comprehensive logging for audit trails
-- ⚡ Retry logic for API resilience
+Ce programme génère un rapport Excel détaillé des plus-values réalisées sur vos opérations de cryptomonnaies via Binance, calculées selon la méthode du **prix moyen pondéré d'acquisition** conformément à l'article 150 VH bis du Code général des impôts.
 
-## Requirements
+## ✨ Fonctionnalités
 
-- Python 3.8 or higher
-- Binance account with API access
-- Internet connection for API calls
+- ✅ Récupération automatique des opérations fiat (dépôts/retraits EUR) via l'API Binance
+- ✅ Calcul des valeurs de portefeuille avec snapshots Binance et prix historiques
+- ✅ Calcul automatique des plus-values selon la méthode fiscale française
+- ✅ Génération de rapport Excel avec formules vérifiables
+- ✅ Taux de change historiques officiels (BCE via Frankfurter)
+- ✅ Support des balances EUR fiat, cryptos et stablecoins
+- ✅ Traçabilité complète et transparence des calculs
+- ✅ Option de génération PDF
 
-## Installation
+## 📊 Rapport généré
 
-1. Clone or download this repository:
-```bash
-git clone <repository-url>
-cd binance-tax-report
-```
+Le rapport Excel contient :
 
-2. Install required dependencies:
+| Colonne | Description | Type |
+|---------|-------------|------|
+| Date | Date de l'opération | Donnée |
+| Type d'opération | Dépôt ou Retrait | Donnée |
+| Montant en EUR | Montant de l'opération | Donnée |
+| Valeur portefeuille USD | Valeur du portefeuille en USD | Donnée |
+| Taux de change USD/EUR | Taux historique BCE | Donnée |
+| Valeur portefeuille EUR | Valeur en EUR | **Formule** |
+| Prix d'acquisition restant | Coût d'acquisition | **Formule** |
+| Plus-value imposable | Gain imposable | **Formule** |
+| Cumul plus-values | Total cumulé | **Formule** |
+
+## 🚀 Installation
+
+### Prérequis
+
+- Python 3.8 ou supérieur
+- Compte Binance avec API keys (lecture seule suffisante)
+
+### Installation des dépendances
+
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Create your Binance API keys configuration file (see Configuration section below)
+### Configuration
 
-## Configuration
-
-### Obtaining Binance API Keys
-
-1. Log in to your Binance account at [https://www.binance.com](https://www.binance.com)
-2. Navigate to **API Management** (Profile → API Management)
-3. Click **Create API** and choose **System generated**
-4. Complete the security verification (2FA, email, etc.)
-5. Label your API key (e.g., "Tax Report Generator")
-6. **Important**: Configure API restrictions:
-   - Enable **Read Only** permissions
-   - Disable trading, withdrawals, and other write permissions
-   - Optionally restrict to your IP address for added security
-7. Save your **API Key** and **Secret Key** securely
-
-### binance_keys File Format
-
-Create a file named `binance_keys` in the project root directory with the following format:
+1. Créez un fichier `binance_keys` à la racine du projet :
 
 ```
-API_KEY=your_api_key_here
-SECRET_KEY=your_secret_key_here
+BINANCE_API_KEY='votre_api_key'
+BINANCE_SECRET_KEY='votre_secret_key'
 ```
 
-**Example:**
-```
-API_KEY=abc123def456ghi789jkl012mno345pqr678stu901vwx234yz
-SECRET_KEY=xyz987wvu654tsr321qpo098nml765kji432hgf210edc098ba
-```
+2. Créez vos API keys sur Binance :
+   - Connectez-vous à Binance
+   - Allez dans "API Management"
+   - Créez une nouvelle API key
+   - **Permissions nécessaires** : Lecture seule (Read Only)
+   - **Restrictions IP** : Recommandé pour la sécurité
 
-**Security Notes:**
-- Never commit this file to version control
-- Keep your secret key confidential
-- Use read-only API permissions
-- Consider restricting API access to your IP address
+## 📖 Utilisation
 
-## Usage
-
-### Basic Usage (Excel Only)
-
-Generate a tax report for a specific year:
+### Génération du rapport
 
 ```bash
-python generate_tax_report.py 2024
+# Rapport Excel uniquement
+python generate_tax_report.py 2025
+
+# Rapport Excel + PDF
+python generate_tax_report.py 2025 --pdf
 ```
 
-This will create an Excel file at:
-```
-rapports/Declaration_Fiscale_Crypto_2024.xlsx
-```
+Le rapport sera créé dans le dossier `rapports/` :
+- `Declaration_Fiscale_Crypto_2025.xlsx`
+- `Declaration_Fiscale_Crypto_2025.pdf` (si option --pdf)
 
-### Generate Both Excel and PDF
+### Valeurs manuelles (optionnel)
 
-To generate both Excel and PDF reports:
+Pour les opérations anciennes (> 30 jours), vous pouvez fournir des valeurs de portefeuille manuelles pour plus de précision.
 
-```bash
-python generate_tax_report.py 2024 --pdf
-```
+Éditez le fichier `portfolio_values_manual.csv` :
 
-This will create:
-```
-rapports/Declaration_Fiscale_Crypto_2024.xlsx
-rapports/Declaration_Fiscale_Crypto_2024.pdf
+```csv
+# timestamp,portfolio_value_usd
+1724943522000,22.85    # 2025-08-29 14:38:42 - Après dépôt 19.60 EUR
+1724950579000,82.30    # 2025-08-29 16:36:19 - AVANT retrait 14.00 EUR
 ```
 
-### Command-Line Options
+## 📐 Méthodologie de calcul
+
+### Principe général
+
+Le programme applique la **méthode du prix moyen pondéré d'acquisition** :
+
+1. **Dépôts** : Augmentent le prix d'acquisition total
+2. **Retraits** : Génèrent une plus-value proportionnelle
+
+### Formule de calcul
 
 ```
-python generate_tax_report.py <year> [--pdf]
-
-Arguments:
-  year          Fiscal year to generate report for (e.g., 2024)
-
-Options:
-  --pdf         Generate PDF report in addition to Excel
+Plus-value = Retrait - (Prix acquisition × (Retrait / Valeur portefeuille))
 ```
 
-## Output File Formats
+### Valeur du portefeuille
 
-### Excel Report
-
-The Excel file contains the following columns:
-
-| Column | Description |
-|--------|-------------|
-| Date | Operation date (YYYY-MM-DD format) |
-| Type d'opération | Operation type (Dépôt/Retrait Fiat) |
-| Montant en EUR | Amount in EUR (2 decimal places) |
-| Valeur portefeuille USD (après opération) | Portfolio value in USD after operation |
-| Taux de change USD/EUR | USD to EUR exchange rate |
-| Valeur totale du portefeuille (EUR) | Total portfolio value in EUR (empty for deposits) |
-| Prix total d'acquisition restant (EUR) | Remaining acquisition cost in EUR |
-| Plus-value imposable (EUR) | Taxable capital gain in EUR |
-| Cumul plus-values (EUR) | Cumulative capital gains in EUR |
-
-**Summary Row:**
-- The last row contains totals for deposits, withdrawals, and cumulative gains
-- All monetary values are formatted with 2 decimal places
-- Operations are sorted chronologically
-
-### PDF Report
-
-The PDF file contains:
-- Same data as Excel in a formatted table
-- Clear headers and readable fonts
-- Summary section at the end with totals
-- Professional layout suitable for printing
-
-## How It Works
-
-### French Flat Tax Calculation Method
-
-The system implements the official French tax calculation method for cryptocurrency:
-
-1. **Deposits**: Increase the acquisition cost by the deposit amount
-   - Taxable gain = 0 EUR
-
-2. **Withdrawals**: Calculate taxable gain using the formula:
-   ```
-   Taxable Gain = Withdrawal Amount - (Acquisition Cost × (Withdrawal Amount / Portfolio Value))
-   New Acquisition Cost = Old Cost - (Old Cost × (Withdrawal Amount / Portfolio Value))
-   ```
-
-3. **Cumulative Tracking**: Maintains running total of all taxable gains for the year
-
-### Data Flow
-
-1. Load Binance API credentials from `binance_keys` file
-2. Retrieve all EUR deposit/withdrawal operations for the specified year
-3. For each operation:
-   - Get portfolio snapshot value in USD from Binance
-   - Fetch historical USD/EUR exchange rate from Frankfurter API
-   - Convert portfolio value to EUR
-   - Calculate taxable gain using French method
-4. Generate Excel report with all calculations
-5. Optionally generate PDF report
-
-## Logging
-
-All operations are logged to `tax_report_{year}.log` with:
-- INFO: Normal operations and API calls
-- WARNING: Retry attempts and fallback operations
-- ERROR: Failed operations and exceptions
-- Timestamps for all events
-
-## Error Handling
-
-The system handles common errors gracefully:
-
-- **Missing API keys**: Clear error message with configuration instructions
-- **Binance API errors**: Automatic retry with exponential backoff (up to 3 attempts)
-- **Exchange rate unavailable**: Tries nearest date within ±7 days
-- **No operations found**: Creates empty report with informative message
-- **Network issues**: Timeout handling and retry logic
-
-## Troubleshooting
-
-### "binance_keys file not found"
-- Ensure the `binance_keys` file exists in the project root directory
-- Check the file format matches the example above
-
-### "Invalid API credentials"
-- Verify your API key and secret key are correct
-- Ensure there are no extra spaces or line breaks
-- Check that API key is still active in Binance
-
-### "No operations found for year"
-- Verify you had EUR deposits or withdrawals in that year
-- Check your Binance account has fiat transaction history
-- Ensure API key has permission to read fiat operations
-
-### Exchange rate errors
-- The system automatically tries nearby dates if exact date unavailable
-- Check your internet connection
-- Frankfurter API may have temporary outages (check status)
-
-## Project Structure
-
+**Pour un DÉPÔT** :
 ```
-binance-tax-report/
-├── generate_tax_report.py      # Main entry point
-├── binance_keys                 # API credentials (not in git)
-├── requirements.txt             # Python dependencies
-├── config/
-│   └── config.py               # Configuration management
-├── clients/
-│   ├── binance_client.py       # Binance API client
-│   └── frankfurter_client.py   # Exchange rate API client
-├── calculators/
-│   ├── flat_tax_calculator.py  # Tax calculation logic
-│   └── portfolio_calculator.py # Portfolio value conversion
-├── writers/
-│   ├── excel_writer.py         # Excel report generation
-│   └── pdf_writer.py           # PDF report generation
-├── utils/
-│   └── logger.py               # Logging configuration
-├── models.py                    # Data models
-├── tests/                       # Unit and integration tests
-└── rapports/                    # Generated reports (created automatically)
+Valeur = Actifs existants + Montant déposé (en USD)
 ```
 
-## Security Best Practices
+**Pour un RETRAIT** :
+```
+Valeur AVANT retrait = Actifs au moment du retrait + Montant retiré (en USD)
+```
 
-1. **API Key Security**:
-   - Use read-only API keys
-   - Never share your secret key
-   - Restrict API access to your IP if possible
-   - Rotate keys periodically
+### Sources de données
 
-2. **File Permissions**:
-   - Restrict `binance_keys` file to owner only: `chmod 600 binance_keys`
-   - Keep generated reports secure (contain sensitive financial data)
+- **Snapshots Binance** (< 30 jours) : Données réelles et précises
+- **Prix historiques** (> 30 jours) : Approximation avec balances actuelles
+- **Taux de change** : BCE via API Frankfurter
 
-3. **Version Control**:
-   - Never commit `binance_keys` to git
-   - Add to `.gitignore`: `binance_keys`
-   - Don't commit generated reports
+## 📄 Documentation fiscale
 
-## Legal Disclaimer
+Pour une explication détaillée de la méthodologie (présentable au fisc), consultez :
 
-This tool is provided for informational purposes only. It calculates capital gains based on the French flat tax method, but:
+📘 **[METHODOLOGIE_CALCUL_FISCAL.md](METHODOLOGIE_CALCUL_FISCAL.md)**
 
-- Always verify calculations with a tax professional
-- Tax laws may change; ensure compliance with current regulations
-- The authors are not responsible for any tax filing errors
-- This is not financial or legal advice
+Ce document contient :
+- Principe général et base légale
+- Définition des opérations
+- Méthode de calcul détaillée
+- Exemples chiffrés
+- Traçabilité et conformité
+- Modèle d'attestation
 
-## Support
+## 🔍 Vérification des calculs
 
-For issues or questions:
-1. Check the Troubleshooting section above
-2. Review the log file for detailed error messages
-3. Verify your API keys and configuration
-4. Ensure all dependencies are installed correctly
+Toutes les formules Excel sont visibles et modifiables :
 
-## License
+1. Ouvrez le rapport Excel
+2. Cliquez sur une cellule calculée (colonnes F, G, H, I)
+3. La formule s'affiche dans la barre de formule
+4. Vous pouvez vérifier et modifier si nécessaire
 
-[Add your license information here]
+## 📊 Exemple de résultat
 
-## Contributing
+```
+📊 Summary:
+   Total Deposits:     €939.60
+   Total Withdrawals:  €14.00
+   Total Taxable Gains: €13.04
 
-[Add contribution guidelines if applicable]
+Impôt dû (30%) : €3.91
+```
+
+## ⚠️ Limitations
+
+### Valeurs historiques
+
+Pour les opérations de plus de 30 jours, les snapshots Binance ne sont plus disponibles. Le programme utilise alors une approximation (balances actuelles × prix historiques).
+
+**Solution** : Fournir des valeurs manuelles via `portfolio_values_manual.csv`
+
+### Timing des conversions
+
+Pour les retraits, le moment exact de la conversion crypto → EUR n'est pas toujours connu. Le programme utilise une méthode prudente en ajoutant le montant retiré à la valeur du portefeuille.
+
+## 📁 Structure du projet
+
+```
+.
+├── generate_tax_report.py          # Script principal
+├── binance_keys                     # Vos API keys (à créer)
+├── portfolio_values_manual.csv     # Valeurs manuelles (optionnel)
+├── requirements.txt                 # Dépendances Python
+├── README.md                        # Ce fichier
+├── METHODOLOGIE_CALCUL_FISCAL.md   # Documentation fiscale détaillée
+├── clients/                         # Clients API
+│   ├── binance_client.py
+│   └── frankfurter_client.py
+├── calculators/                     # Calculateurs
+│   ├── flat_tax_calculator.py
+│   └── portfolio_calculator.py
+├── writers/                         # Générateurs de rapports
+│   ├── excel_writer.py
+│   └── pdf_writer.py
+├── config/                          # Configuration
+│   └── config.py
+├── utils/                           # Utilitaires
+│   └── logger.py
+├── logs/                            # Logs d'exécution
+└── rapports/                        # Rapports générés
+```
+
+## 🔒 Sécurité
+
+- ✅ API keys stockées localement (jamais transmises)
+- ✅ Permissions lecture seule suffisantes
+- ✅ Pas de stockage de données sensibles
+- ✅ Code open source et auditable
+
+## 📝 Déclaration fiscale
+
+### Formulaires à remplir
+
+1. **Formulaire 2086** : Déclaration des plus-values sur actifs numériques
+2. **Formulaire 2042 C** : Déclaration complémentaire des revenus
+
+### Montant à déclarer
+
+Le **cumul des plus-values** (dernière ligne du rapport Excel) est à reporter sur le formulaire 2086.
+
+### Impôt
+
+**Flat tax de 30%** :
+- 12,8% impôt sur le revenu
+- 17,2% prélèvements sociaux
+
+### Conservation des documents
+
+Conservez pendant **6 ans** :
+- Le rapport Excel généré
+- Les exports Binance
+- Les relevés bancaires
+- La documentation méthodologique
+
+## 🆘 Support
+
+### Problèmes courants
+
+**"No fiat operations found"**
+- Vérifiez que vous avez bien des opérations EUR en 2025
+- Vérifiez les permissions de vos API keys
+
+**"Rate limit exceeded"**
+- Attendez quelques minutes
+- Binance limite le nombre de requêtes API
+
+**Valeurs incohérentes**
+- Pour les dates anciennes, fournissez des valeurs manuelles
+- Vérifiez les logs dans `logs/tax_report_YYYY.log`
+
+### Logs
+
+Les logs détaillés sont disponibles dans :
+```
+logs/tax_report_2025.log
+```
+
+## 📜 Licence
+
+Ce projet est open source. Vous êtes libre de l'utiliser, le modifier et le distribuer.
+
+## ⚖️ Avertissement
+
+Ce programme est fourni à titre informatif. L'utilisateur reste responsable de l'exactitude de sa déclaration fiscale. En cas de doute, consultez un expert-comptable ou un conseiller fiscal.
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- Signaler des bugs
+- Proposer des améliorations
+- Soumettre des pull requests
+
+## 📞 Contact
+
+Pour toute question ou suggestion, ouvrez une issue sur le dépôt du projet.
+
+---
+
+**Version** : 1.0  
+**Dernière mise à jour** : Octobre 2025  
+**Conformité** : Article 150 VH bis du CGI
