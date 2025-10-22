@@ -1,0 +1,4 @@
+2025-10-22 07:02:13 - binance_tax_report - INFO - Logger initialized. Log file: tax_report_2024.log
+2025-10-22 07:02:13 - binance_tax_report - INFO - Test message
+2025-10-22 07:02:13 - binance_tax_report - WARNING - Test warning
+2025-10-22 07:02:13 - binance_tax_report - ERROR - Test error

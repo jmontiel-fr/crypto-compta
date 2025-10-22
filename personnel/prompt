@@ -1,0 +1,30 @@
+new spec
+-----------------
+
+Je dispose d'un compte Binance personnel. 
+crée un script Python qui génére n fichier Excel pour la déclaration 
+fiscale d'actifs numériques française comprenant le calcul de la flat tax.
+Le fichier doit tracer tous les opérations depôts et retrais fiat EUR
+Pour chaque retrait, on a une ligne présentant pour une année fiscale :
+- Date (d'opération )
+- Type d’opération (Dépôt/Retrait Fiat)
+- Montant en EUR
+- Valeur totale du portefeuille (EUR)
+- Prix total d’acquisition restant (EUR)
+- Plus-value imposable (EUR) : pour les retraits seulement (0 pour les dépot)
+- Cumul plus-values (EUR)
+
+Le calcul officiel de la flat tax est dans calcul-flat-tax.pdf
+
+Le fichier Flat_Tax_Crypto_Annuel_Complet_v2.xlsx montre une exmple de caclul de la flat tax et sert de base au fichier à produire.
+
+
+
+La valeur de portefeuile en EUR doit être calcule par leprogramm, sur la base de la valeur récupérée sur Bianance en USD. 
+Il faut donc ajouter pour chaque ligne 
+- la valeur du portefeuille Binance en USD (après l'opération)
+- le taux de change USD vers EUR à la date de l'opération récupérée avec l'API Frankfurter
+
+Le programme est écrit en Python et utilise des clés Bianance fournies 
+dans le fichier séparé binance_keys et l'API Binance Python.
+Parametres: année
